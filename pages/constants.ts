@@ -9,6 +9,11 @@ export const INITIAL_USER: UserProfile = {
   whatsappNotifications: false,
 };
 
+// TODO: Substitua pelo LINK DE PAGAMENTO gerado no painel do Stripe
+// Product Name: Plano Pro
+// Price ID: price_1SlJtIF4exFtYFzmxVF6UyIp
+export const STRIPE_CHECKOUT_URL = 'https://buy.stripe.com/BLOCKER_REPLACE_WITH_YOUR_LINK';
+
 export const INITIAL_INDICATORS: Indicator[] = [
   {
     id: '1',

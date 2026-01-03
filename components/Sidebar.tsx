@@ -70,8 +70,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     onSelectIndicator(ind.id);
                   }}
                   className={`w-full flex items-center gap-3 px-3 py-2 text-sm rounded-r-full mr-2 transition-colors text-left pl-6 ${currentView === 'board' && activeIndicatorId === ind.id
-                      ? 'bg-blue-50 text-blue-700 font-medium'
-                      : 'text-gray-600 hover:bg-gray-100'
+                    ? 'bg-blue-50 text-blue-700 font-medium'
+                    : 'text-gray-600 hover:bg-gray-100'
                     }`}
                 >
                   <div className={`w-3 h-3 rounded bg-gray-300 ${currentView === 'board' && activeIndicatorId === ind.id ? 'bg-blue-500' : ''}`} />
@@ -98,8 +98,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
         <button
           onClick={() => onNavigate('account')}
           className={`w-full flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-lg transition-colors ${currentView === 'account'
-              ? 'bg-blue-100 text-blue-700'
-              : 'text-gray-600 hover:bg-gray-100'
+            ? 'bg-blue-100 text-blue-700'
+            : 'text-gray-600 hover:bg-gray-100'
             }`}
         >
           <User className="w-5 h-5" />
@@ -113,7 +113,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
               {userPlan === 'basic' ? 'Pro' : 'Grátis'}
             </span>
             {userPlan === 'free' && (
-              <span className="text-[10px] bg-gray-200 px-1.5 py-0.5 rounded text-gray-600">Max 1 ind.</span>
+              <span className="text-[10px] bg-gray-200 px-1.5 py-0.5 rounded text-gray-600">Max 2 ind.</span>
             )}
           </div>
         </div>

@@ -6,7 +6,7 @@ import { AccountSettings } from '../components/AccountSettings';
 import { IndicatorModal, UpgradeModal } from '../components/Modals';
 import { Login } from '../components/Login';
 // import { INITIAL_INDICATORS, INITIAL_USER } from './constants'; // Removed initial data import
-import { INITIAL_USER } from './constants';
+import { INITIAL_USER, STRIPE_CHECKOUT_URL } from './constants';
 import { Indicator, PlanType, UserProfile, IndicatorUnit } from './types';
 import { Menu } from 'lucide-react';
 import { supabase } from './lib/supabaseClient'; // Import supabase client
@@ -109,6 +109,17 @@ const App = () => {
       fetchIndicators();
     }
   }, [session]);
+
+  // Check for Stripe success return
+  useEffect(() => {
+    const query = new URLSearchParams(window.location.search);
+    if (query.get('success') === 'true') {
+      setUser(prev => ({ ...prev, plan: 'basic' }));
+      alert('Parabéns! Seu Plano Pro foi ativado com sucesso.');
+      // Clean URL
+      window.history.replaceState({}, '', window.location.pathname);
+    }
+  }, []);
 
   if (loading) {
     return <div className="flex h-screen items-center justify-center bg-[#f8fafc]">Carregando...</div>;
@@ -360,8 +371,11 @@ const App = () => {
   };
 
   const handleUpdatePlan = (plan: PlanType) => {
-    setUser({ ...user, plan });
-    setShowUpgradeModal(false);
+    if (STRIPE_CHECKOUT_URL.includes('BLOCKER')) {
+      alert('O link de pagamento ainda não foi configurado pelo administrador.');
+      return;
+    }
+    window.location.href = STRIPE_CHECKOUT_URL;
   };
 
   const handleToggleNotifications = () => {
