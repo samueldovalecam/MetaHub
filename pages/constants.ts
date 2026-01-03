@@ -10,9 +10,9 @@ export const INITIAL_USER: UserProfile = {
 };
 
 // TODO: Substitua pelo LINK DE PAGAMENTO gerado no painel do Stripe
-// Product Name: Plano Pro
-// Price ID: price_1SlJtIF4exFtYFzmxVF6UyIp
-export const STRIPE_CHECKOUT_URL = 'https://buy.stripe.com/BLOCKER_REPLACE_WITH_YOUR_LINK';
+// Product Name: Plano Pro (Recorrente)
+// Price ID: Utilizando Link Gerado Manualmente
+export const STRIPE_CHECKOUT_URL = 'https://buy.stripe.com/00wcN5fiS4L62Lg0dI4wM00';
 
 export const INITIAL_INDICATORS: Indicator[] = [
   {
