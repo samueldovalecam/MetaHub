@@ -100,6 +100,25 @@ const App = () => {
     }
   };
 
+  // Fetch user profile
+  const fetchProfile = async () => {
+    if (!session?.user) return;
+
+    const { data, error } = await supabase
+      .from('profiles')
+      .select('*')
+      .eq('id', session.user.id)
+      .single();
+
+    if (data) {
+      setUser(prev => ({
+        ...prev,
+        plan: data.plan as PlanType,
+        whatsappNotifications: data.whatsapp_notifications
+      }));
+    }
+  };
+
   useEffect(() => {
     if (session?.user) {
       setUser(prev => ({
@@ -107,19 +126,32 @@ const App = () => {
         email: session.user.email || prev.email,
       }));
       fetchIndicators();
+      fetchProfile();
     }
   }, [session]);
 
   // Check for Stripe success return
   useEffect(() => {
     const query = new URLSearchParams(window.location.search);
-    if (query.get('success') === 'true') {
+    if (query.get('success') === 'true' && session?.user) {
+      // Update local state
       setUser(prev => ({ ...prev, plan: 'basic' }));
-      alert('Parabéns! Seu Plano Pro foi ativado com sucesso.');
+
+      // Persist to Supabase
+      supabase.from('profiles').upsert({
+        id: session.user.id,
+        email: session.user.email,
+        plan: 'basic',
+        updated_at: new Date().toISOString()
+      }).then(({ error }) => {
+        if (error) console.error('Error saving profile:', error);
+      });
+
+      alert('Parabéns! Seu Plano Pro foi ativado com sucesso e salvo em sua conta.');
       // Clean URL
       window.history.replaceState({}, '', window.location.pathname);
     }
-  }, []);
+  }, [session]);
 
   if (loading) {
     return <div className="flex h-screen items-center justify-center bg-[#f8fafc]">Carregando...</div>;
@@ -375,7 +407,12 @@ const App = () => {
       alert('O link de pagamento ainda não foi configurado pelo administrador.');
       return;
     }
-    window.location.href = STRIPE_CHECKOUT_URL;
+
+    // Append client_reference_id and prefilled_email for robust webhook matching
+    const separator = STRIPE_CHECKOUT_URL.includes('?') ? '&' : '?';
+    const finalUrl = `${STRIPE_CHECKOUT_URL}${separator}client_reference_id=${user.id || session?.user?.id}&prefilled_email=${encodeURIComponent(user.email)}`;
+
+    window.location.href = finalUrl;
   };
 
   const handleToggleNotifications = () => {
