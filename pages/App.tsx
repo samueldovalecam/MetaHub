@@ -113,6 +113,8 @@ const App = () => {
     if (data) {
       setUser(prev => ({
         ...prev,
+        name: data.full_name || prev.name,
+        phone: data.phone || prev.phone,
         plan: data.plan as PlanType,
         whatsappNotifications: data.whatsapp_notifications
       }));

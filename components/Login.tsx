@@ -9,6 +9,7 @@ interface LoginProps {
 export const Login: React.FC<LoginProps> = () => {
   const [isRegistering, setIsRegistering] = useState(false);
   const [email, setEmail] = useState('');
+  const [fullName, setFullName] = useState('');
   const [password, setPassword] = useState('');
   const [phone, setPhone] = useState('');
   const [loading, setLoading] = useState(false);
@@ -40,6 +41,7 @@ export const Login: React.FC<LoginProps> = () => {
           password,
           options: {
             data: {
+              full_name: fullName,
               phone: phone,
             },
           },
@@ -75,6 +77,22 @@ export const Login: React.FC<LoginProps> = () => {
           {error && (
             <div className="p-3 text-sm text-red-600 bg-red-50 rounded-lg border border-red-100">
               {error}
+            </div>
+          )}
+
+
+
+          {isRegistering && (
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1.5">Nome</label>
+              <input
+                type="text"
+                required
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
+                className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+                placeholder="Seu Nome"
+              />
             </div>
           )}
 
@@ -140,7 +158,7 @@ export const Login: React.FC<LoginProps> = () => {
             {isRegistering ? 'Já tem uma conta? Entre aqui' : 'Não tem conta? Cadastre-se'}
           </button>
         </div>
-      </div>
-    </div>
+      </div >
+    </div >
   );
 };
