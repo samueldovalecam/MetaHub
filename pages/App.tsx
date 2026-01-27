@@ -127,6 +127,7 @@ const App = () => {
         ...prev,
         email: session.user.email || prev.email,
       }));
+      setCurrentView('board'); // Force redirect to board on login
       fetchIndicators();
       fetchProfile();
     }

@@ -168,7 +168,7 @@ export const IndicatorCard: React.FC<IndicatorCardProps> = ({
           <div className="bg-blue-50 p-2 rounded-lg border border-blue-100">
             <div className="text-blue-600 mb-1">Falta</div>
             <div className="font-bold text-blue-800 truncate" title={formatValue(missingPlanned)}>
-              {missingPlanned > 0 ? formatValue(missingPlanned) : '0'}
+              {formatValue(missingPlanned)}
             </div>
           </div>
         </div>
