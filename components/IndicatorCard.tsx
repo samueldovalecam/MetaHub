@@ -104,7 +104,7 @@ export const IndicatorCard: React.FC<IndicatorCardProps> = ({
                   {/* Updated tooltip position: top-full (below) and left-0 (aligned left) or customized to avoid clipping */}
                   <div className="absolute left-0 top-full mt-2 hidden group-hover:block w-52 p-2.5 bg-gray-800 text-white text-xs rounded-lg z-50 shadow-lg border border-gray-700">
                     <div className="font-semibold mb-1 text-amber-300">Atenção</div>
-                    Faltam planejar {formatValue(missingPlanned)} em ações para atingir a meta.
+                    Faltam planejar {formatValue(missingPlanned)} em ações para a meta.
                     {/* Little triangle pointing up */}
                     <div className="absolute bottom-full left-2 border-4 border-transparent border-b-gray-800"></div>
                   </div>
