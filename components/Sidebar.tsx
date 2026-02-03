@@ -41,10 +41,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
     <aside className="w-72 bg-white border-r border-gray-200 flex flex-col h-full shrink-0">
       <div className="p-4 pt-6 pb-2">
         <div className="flex items-center gap-2 mb-8 text-blue-600 px-2">
-          <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-sm">
-            <CheckSquare className="w-5 h-5" strokeWidth={3} />
-          </div>
-          <span className="text-xl font-semibold text-gray-700 tracking-tight">MetaHub</span>
+          <img src="/logo.png" alt="Supgest" className="w-8 h-8 object-contain" />
+          <span className="text-xl font-semibold text-gray-700 tracking-tight">Supgest</span>
         </div>
       </div>
 

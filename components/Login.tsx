@@ -66,10 +66,8 @@ export const Login: React.FC<LoginProps> = () => {
     <div className="min-h-screen flex flex-col items-center justify-center bg-[#f8fafc] p-4">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-8 animate-in fade-in zoom-in duration-300">
         <div className="flex flex-col items-center mb-8">
-          <div className="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center text-white shadow-lg mb-4 transform rotate-3">
-            <CheckSquare className="w-7 h-7" strokeWidth={3} />
-          </div>
-          <h1 className="text-2xl font-bold text-gray-800 tracking-tight">MetaHub</h1>
+          <img src="/logo.png" alt="Supgest" className="w-20 h-20 object-contain mb-4 hover:scale-105 transition-transform" />
+          <h1 className="text-2xl font-bold text-gray-800 tracking-tight">Supgest</h1>
           <p className="text-gray-500 text-sm mt-2">Gerencie seus indicadores e ações</p>
         </div>
 

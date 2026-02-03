@@ -2,8 +2,8 @@
 import { Indicator, UserProfile } from './types';
 
 export const INITIAL_USER: UserProfile = {
-  name: 'Usuário MetaHub',
-  email: 'usuario@metahub.com',
+  name: 'Usuário Supgest',
+  email: 'usuario@supgest.com',
   phone: '(11) 99999-9999',
   plan: 'free',
   whatsappNotifications: false,
