@@ -41,8 +41,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
     <aside className="w-72 bg-white border-r border-gray-200 flex flex-col h-full shrink-0">
       <div className="p-4 pt-6 pb-2">
         <div className="flex items-center gap-1 mb-8 text-blue-600 px-2">
-          <img src="/logo.png" alt="Supgest" className="w-12 h-12 object-contain" />
-          <span className="text-xl font-semibold text-gray-700 tracking-tight">Supgest</span>
+          <img src="/logo.png" alt="Supgest" className="w-14 h-14 object-contain" />
+          <span className="text-2xl font-bold text-gray-900 tracking-tight">Supgest</span>
         </div>
       </div>
 
