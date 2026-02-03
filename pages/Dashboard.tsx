@@ -1,9 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
-import { Sidebar } from '../components/Sidebar';
-import { IndicatorCard } from '../components/IndicatorCard';
-import { AccountSettings } from '../components/AccountSettings';
-import { IndicatorModal, UpgradeModal } from '../components/Modals';
+import { Sidebar } from './components/Sidebar';
+import { IndicatorCard } from './components/IndicatorCard';
+import { AccountSettings } from './components/AccountSettings';
+import { IndicatorModal, UpgradeModal } from './components/Modals';
 // Login import removed as routing handles it
 // import { INITIAL_INDICATORS, INITIAL_USER } from './constants'; // Removed initial data import
 import { INITIAL_USER, STRIPE_CHECKOUT_URL } from './constants';
@@ -410,7 +410,7 @@ export const Dashboard = () => {
 
     // Append client_reference_id and prefilled_email for robust webhook matching
     const separator = STRIPE_CHECKOUT_URL.includes('?') ? '&' : '?';
-    const finalUrl = `${STRIPE_CHECKOUT_URL}${separator}client_reference_id=${user.id || session?.user?.id}&prefilled_email=${encodeURIComponent(user.email)}`;
+    const finalUrl = `${STRIPE_CHECKOUT_URL}${separator}client_reference_id=${session?.user?.id}&prefilled_email=${encodeURIComponent(user.email)}`;
 
     window.location.href = finalUrl;
   };

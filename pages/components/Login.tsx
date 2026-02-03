@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { CheckSquare, Loader2 } from 'lucide-react';
-import { supabase } from '../pages/lib/supabaseClient';
+import { supabase } from '../lib/supabaseClient';
 
 interface LoginProps {
   onLogin?: (userData?: { email: string; phone?: string }) => void;
