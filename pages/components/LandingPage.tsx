@@ -39,7 +39,7 @@ export const LandingPage = () => {
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
                         </span>
-                        A ferramenta definitiva para gestão de indicadores
+                        A ferramenta definitiva para gestão da sua empresa
                     </div>
 
                     <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 tracking-tight leading-tight max-w-4xl mx-auto">
@@ -47,7 +47,7 @@ export const LandingPage = () => {
                     </h1>
 
                     <p className="text-xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed">
-                        Centralize indicadores, planos de ação e acompanhe o progresso da sua equipe em tempo real. Simples, visual e eficiente.
+                        Centralize indicadores, planos de ação e acompanhe o progresso da sua empresa de maneira simples, visual e eficiente.
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -77,11 +77,6 @@ export const LandingPage = () => {
                                 alt="Dashboard Preview"
                                 className="w-full h-full object-cover rounded-xl opacity-90 hover:opacity-100 transition-opacity"
                             />
-                            <div className="absolute inset-0 flex items-center justify-center bg-gray-900/5 backdrop-blur-[1px]">
-                                <span className="px-6 py-3 bg-white/90 backdrop-blur-md rounded-xl font-medium text-gray-600 shadow-sm border border-gray-100">
-                                    Simulação da Interface
-                                </span>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -101,38 +96,18 @@ export const LandingPage = () => {
                         <FeatureCard
                             icon={<Target className="w-8 h-8 text-blue-600" />}
                             title="Metas Claras"
-                            description="Defina objetivos mensuráveis e acompanhe o progresso visualmente com barras de status intuitivas."
+                            description="Defina objetivos mensuráveis e acompanhe os progressos."
                         />
                         <FeatureCard
                             icon={<Layout className="w-8 h-8 text-purple-600" />}
                             title="Planos de Ação"
-                            description="Quebre grandes objetivos em tarefas acionáveis e atribua responsabilidades para sua equipe."
+                            description="Quebre grandes objetivos em tarefas que podem ser enviadas no seu WhatsApp."
                         />
                         <FeatureCard
                             icon={<BarChart3 className="w-8 h-8 text-green-600" />}
-                            title="Indicadores em Tempo Real"
-                            description="Atualize seus números e veja o impacto imediato no atingimento das suas metas globais."
+                            title="Método de gestão"
+                            description="O mesmo método utilizado pelas grandes empresas de maneira simples e eficiente."
                         />
-                    </div>
-                </div>
-            </section>
-
-            {/* Social Proof Section */}
-            <section className="py-20 bg-white border-y border-gray-100">
-                <div className="max-w-7xl mx-auto px-4 text-center">
-                    <div className="grid md:grid-cols-3 gap-12 text-center">
-                        <div>
-                            <div className="text-4xl font-bold text-gray-900 mb-2">+1000</div>
-                            <div className="text-gray-500">Planos criados</div>
-                        </div>
-                        <div>
-                            <div className="text-4xl font-bold text-gray-900 mb-2">100%</div>
-                            <div className="text-gray-500">Foco em Resultado</div>
-                        </div>
-                        <div>
-                            <div className="text-4xl font-bold text-gray-900 mb-2">24/7</div>
-                            <div className="text-gray-500">Disponibilidade</div>
-                        </div>
                     </div>
                 </div>
             </section>
