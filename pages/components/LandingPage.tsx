@@ -10,9 +10,9 @@ export const LandingPage = () => {
             {/* Header */}
             <header className="fixed w-full bg-white/80 backdrop-blur-md border-b border-gray-100 z-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                        <img src="/logo.png" alt="Supgest Logo" className="w-10 h-10 object-contain" />
-                        <span className="text-xl font-bold text-gray-900 tracking-tight">Supgest</span>
+                    <div className="flex items-center gap-1">
+                        <img src="/logo.png" alt="Supgest Logo" className="w-14 h-14 object-contain" />
+                        <span className="text-2xl font-bold text-gray-900 tracking-tight">Supgest</span>
                     </div>
                     <div className="flex items-center gap-4">
                         <button
@@ -162,8 +162,8 @@ export const LandingPage = () => {
             {/* Footer */}
             <footer className="bg-white py-12 border-t border-gray-100">
                 <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
-                    <div className="flex items-center gap-2">
-                        <img src="/logo.png" alt="Supgest Logo" className="w-8 h-8 object-contain opacity-50 grayscale hover:grayscale-0 transition-all" />
+                    <div className="flex items-center gap-1">
+                        <img src="/logo.png" alt="Supgest Logo" className="w-10 h-10 object-contain opacity-50 grayscale hover:grayscale-0 transition-all" />
                         <span className="text-gray-400 font-medium">Supgest © 2024</span>
                     </div>
                     <div className="flex gap-8 text-sm text-gray-500">
