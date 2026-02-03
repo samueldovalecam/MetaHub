@@ -164,12 +164,7 @@ export const LandingPage = () => {
                 <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
                     <div className="flex items-center gap-1">
                         <img src="/logo.png" alt="Supgest Logo" className="w-10 h-10 object-contain opacity-50 grayscale hover:grayscale-0 transition-all" />
-                        <span className="text-gray-400 font-medium">Supgest © 2024</span>
-                    </div>
-                    <div className="flex gap-8 text-sm text-gray-500">
-                        <a href="#" className="hover:text-blue-600 transition-colors">Termos</a>
-                        <a href="#" className="hover:text-blue-600 transition-colors">Privacidade</a>
-                        <a href="#" className="hover:text-blue-600 transition-colors">Contato</a>
+                        <span className="text-gray-400 font-medium">Supgest © 2026</span>
                     </div>
                 </div>
             </footer>
