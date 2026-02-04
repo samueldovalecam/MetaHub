@@ -18,13 +18,33 @@ export const Dashboard = () => {
   const [indicators, setIndicators] = useState<Indicator[]>([]);
   const [user, setUser] = useState<UserProfile>(INITIAL_USER);
   const [currentView, setCurrentView] = useState<'board' | 'account'>('board');
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  // Initialize sidebar state based on screen width
+  const [isSidebarOpen, setIsSidebarOpen] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return window.innerWidth >= 768; // 768px is the 'md' breakpoint
+    }
+    return true;
+  });
   const [activeIndicatorId, setActiveIndicatorId] = useState<string | null>(null);
 
   // Modals State
   const [showUpgradeModal, setShowUpgradeModal] = useState(false);
   const [showIndicatorModal, setShowIndicatorModal] = useState(false);
   const [editingIndicator, setEditingIndicator] = useState<Indicator | null>(null);
+
+  // Handle screen resize
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setIsSidebarOpen(true);
+      } else {
+        setIsSidebarOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Fetch data from Supabase
   const fetchIndicators = async () => {
@@ -442,16 +462,30 @@ export const Dashboard = () => {
         initialData={editingIndicator}
       />
 
+      {/* Sidebar Overlay (Mobile) */}
+      {isSidebarOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-20 md:hidden"
+          onClick={() => setIsSidebarOpen(false)}
+        />
+      )}
+
       {/* Sidebar */}
       {isSidebarOpen && (
-        <div className="hidden md:block h-full shadow-xl z-10">
+        <div className="fixed inset-y-0 left-0 z-30 md:relative md:z-10 h-full shadow-xl">
           <Sidebar
             indicators={indicators}
             currentView={currentView}
-            onNavigate={setCurrentView}
+            onNavigate={(view) => {
+              setCurrentView(view);
+              if (window.innerWidth < 768) setIsSidebarOpen(false); // Close on mobile after nav
+            }}
             onOpenCreateModal={handleOpenCreateModal}
             activeIndicatorId={activeIndicatorId}
-            onSelectIndicator={(id) => setActiveIndicatorId(id)}
+            onSelectIndicator={(id) => {
+              setActiveIndicatorId(id);
+              if (window.innerWidth < 768) setIsSidebarOpen(false); // Close on mobile after selection
+            }}
             userPlan={user.plan}
           />
         </div>
