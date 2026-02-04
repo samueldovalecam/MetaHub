@@ -142,7 +142,7 @@ export const LandingPage = () => {
                         <span className="text-gray-400 font-medium">Supgest © 2026</span>
                     </div>
                     <div className="flex gap-8 text-md text-green-500">
-                        <a href="#" className="hover:text-gray-900 transition-colors">WhatsApp: (31) 97246-6747</a>
+                        <a className="hover:text-gray-900 transition-colors">WhatsApp: (31) 97246-6747</a>
                     </div>
                 </div>
             </footer>
