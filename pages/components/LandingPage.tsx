@@ -140,9 +140,9 @@ export const LandingPage = () => {
                     <div className="flex items-center gap-1">
                         <img src="/logo.png" alt="Supgest Logo" className="w-10 h-10 object-contain opacity-50 grayscale hover:grayscale-0 transition-all" />
                         <span className="text-gray-400 font-medium">Supgest © 2026</span>
-                        <div className="flex gap-8 text-md text-green-500">
-                            <a href="#" className="hover:text-gray-900 transition-colors">Whatsapp: (31) 97246-6747</a>
-                        </div>
+                    </div>
+                    <div className="flex gap-8 text-md text-green-500">
+                        <a href="#" className="hover:text-gray-900 transition-colors">WhatsApp: (31) 97246-6747</a>
                     </div>
                 </div>
             </footer>
