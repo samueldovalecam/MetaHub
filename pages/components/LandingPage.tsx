@@ -11,19 +11,19 @@ export const LandingPage = () => {
             <header className="fixed w-full bg-white/80 backdrop-blur-md border-b border-gray-100 z-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
                     <div className="flex items-center gap-1">
-                        <img src="/logo.png" alt="Supgest Logo" className="w-14 h-14 object-contain" />
-                        <span className="text-2xl font-bold text-gray-900 tracking-tight">Supgest</span>
+                        <img src="/logo.png" alt="Supgest Logo" className="w-10 h-10 md:w-14 md:h-14 object-contain" />
+                        <span className="text-xl md:text-2xl font-bold text-gray-900 tracking-tight">Supgest</span>
                     </div>
                     <div className="flex items-center gap-4">
                         <button
                             onClick={() => navigate('/login')}
-                            className="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors"
+                            className="hidden md:block text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors"
                         >
                             Entrar
                         </button>
                         <button
                             onClick={() => navigate('/login')}
-                            className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-full font-medium text-sm transition-all shadow-lg shadow-blue-200 hover:shadow-blue-300 transform hover:-translate-y-0.5"
+                            className="bg-blue-600 hover:bg-blue-700 text-white px-4 md:px-5 py-2 md:py-2.5 rounded-full font-medium text-sm transition-all shadow-lg shadow-blue-200 hover:shadow-blue-300 transform hover:-translate-y-0.5"
                         >
                             Começar Agora
                         </button>
