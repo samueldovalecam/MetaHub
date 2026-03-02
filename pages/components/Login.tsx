@@ -47,7 +47,7 @@ export const Login: React.FC<LoginProps> = () => {
           },
         });
         if (error) throw error;
-        alert('Cadastro realizado com sucesso! Verifique seu email se necessário.');
+        alert('Cadastro realizado com sucesso!');
       } else {
         const { error } = await supabase.auth.signInWithPassword({
           email,
