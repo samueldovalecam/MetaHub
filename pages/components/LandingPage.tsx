@@ -75,7 +75,7 @@ export const LandingPage = () => {
                             <img
                                 src="/dashboard-preview.png"
                                 alt="Dashboard Preview"
-                                className="w-full h-full object-cover rounded-xl opacity-90 hover:opacity-100 transition-opacity"
+                                className="w-full h-auto rounded-xl opacity-90 hover:opacity-100 transition-opacity"
                             />
                         </div>
                     </div>
