@@ -73,7 +73,7 @@ export const LandingPage = () => {
                         <div className="absolute inset-0 bg-blue-500 blur-3xl opacity-10 rounded-full transform scale-110"></div>
                         <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100 p-2">
                             <img
-                                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2426&q=80"
+                                src="/dashboard-preview.png"
                                 alt="Dashboard Preview"
                                 className="w-full h-full object-cover rounded-xl opacity-90 hover:opacity-100 transition-opacity"
                             />
