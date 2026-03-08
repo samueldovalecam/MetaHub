@@ -47,6 +47,9 @@ export const Login: React.FC<LoginProps> = () => {
           },
         });
         if (error) throw error;
+        if (typeof window !== 'undefined' && (window as any).fbq) {
+          (window as any).fbq('track', 'CompleteRegistration');
+        }
         alert('Cadastro realizado com sucesso!');
       } else {
         const { error } = await supabase.auth.signInWithPassword({
